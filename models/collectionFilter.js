@@ -10,14 +10,10 @@ export default class collectionFilter extends Model {
     }
 
     get(){
-        //Handle
-        let urlParam = new URLSearchParams(this.params);
-        let urlKeys = urlParam.keys();
-        let keys = Array.from(urlKeys);
-        let paramsInvalides = [];
+        //Handle get
 
         //Set result with everything
-        let result = [...this.objects];
+        let result = this.objects;
         
 
         //Filter using field name=filter

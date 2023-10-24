@@ -13,9 +13,9 @@ export default class CollectionFilter extends Model {
         //Handle get
 
         //Set result with everything
-        let result = new Set();
+        let result = this.objects;
         
-        
+        console.log(this.objects);
         //Filter using field name=filter
         for(let paramName in this.params){
             if (paramName !== 'sort' && paramName !== 'limit' && paramName !== 'offset' && paramName !== 'fields') {

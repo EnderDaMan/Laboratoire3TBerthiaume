@@ -13,17 +13,17 @@ export default class CollectionFilter extends Model {
         //Handle get
 
         //Set result with everything
-        let result = this.objects;
+        let result = new Set();
         
         
         //Filter using field name=filter
         for(let paramName in this.params){
             if (paramName !== 'sort' && paramName !== 'limit' && paramName !== 'offset' && paramName !== 'fields') {
-                result = result.filter(object =>
+                result.add(this.objects.filter(object =>
                     this.model.isMember(paramName) && object[paramName] == this.params[paramName]
-                );
+                ));
             }
-        }
+        }/*
         //Filter using sort=field name
         if (this.params.sort && this.model.isMember(this.params.sort)) {
             result.sort();
@@ -31,7 +31,7 @@ export default class CollectionFilter extends Model {
                 result.reverse();
             }
         }
-        /*
+        
         //Filter with limit and offset
         if (this.params.limit && !isNaN(this.params.limit)) {
             let offset = 0;

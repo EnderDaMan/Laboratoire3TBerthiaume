@@ -23,7 +23,7 @@ export default class CollectionFilter extends Model {
                     this.model.isMember(paramName) && object[paramName] == this.params[paramName]
                 );
             }
-        }/*
+        }
         //Filter using sort=field name
         if (this.params.sort && this.model.isMember(this.params.sort)) {
             result.sort();
@@ -31,7 +31,7 @@ export default class CollectionFilter extends Model {
                 result.reverse();
             }
         }
-
+        /*
         //Filter with limit and offset
         if (this.params.limit && !isNaN(this.params.limit)) {
             let offset = 0;

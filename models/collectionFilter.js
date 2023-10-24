@@ -23,7 +23,7 @@ export default class CollectionFilter extends Model {
                     this.model.isMember(paramName) && object[paramName] == this.params[paramName]
                 );
             }
-        }/*
+        }
         //Filter using sort=field name
         if (this.params.sort && this.model.isMember(this.params.sort)) {
             result.sort();
@@ -43,17 +43,18 @@ export default class CollectionFilter extends Model {
 
         //Filter with fields
         if (this.params.fields) {
-            const allFields = this.params.fields.split(',');
+            const fieldList = this.params.fields.split(',');
+            const checkedFields = [];
             result = result.map(object => {
-                const filteredObject = {};
-                allFields.forEach(fieldName => {
-                    if (this.model.isMember(fieldName)) {
-                        filteredObject[fieldName] = object[fieldName];
+                fieldList.forEach(fieldName => {
+                    if (this.model.isMember(fieldName) && !checkedFields.includes(fieldName + ' ' + ':' + ' ' + object[fieldName])) {
+                        checkedFields.add(fieldName + ' ' + ':' + ' ' + object[fieldName]);
                     }
                 });
-                return filteredObject;
+                
+                return checkedFields;
             });
-        }*/
+        }
         return result;
     }
 }

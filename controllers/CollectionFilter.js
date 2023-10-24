@@ -4,6 +4,8 @@ import Controller from './Controller.js';
 
 export default class CollectionFilter extends Controller {
     constructor(Objects, Params, Model) {
+        super();
+        
         this.objects = Objects;
         this.params = Params;
         this.model = Model;

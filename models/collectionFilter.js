@@ -15,7 +15,7 @@ export default class CollectionFilter extends Model {
         //Set result with everything
         let result = this.objects;
         
-
+        /*
         //Filter using field name=filter
         for(let paramName in this.params){
             if (paramName !== 'sort' && paramName !== 'limit' && paramName !== 'offset' && paramName !== 'fields') {
@@ -53,7 +53,7 @@ export default class CollectionFilter extends Model {
                 });
                 return filteredObject;
             });
-        }
+        }*/
         return result;
     }
 }

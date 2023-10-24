@@ -15,13 +15,13 @@ export default class CollectionFilter extends Model {
         //Set result with everything
         let result = this.objects;
         
-        console.log(this.objects);
+        
         //Filter using field name=filter
         for(let paramName in this.params){
             if (paramName !== 'sort' && paramName !== 'limit' && paramName !== 'offset' && paramName !== 'fields') {
-                result.add(this.objects.filter(object =>
+                result = result.filter(object =>
                     this.model.isMember(paramName) && object[paramName] == this.params[paramName]
-                ));
+                );
             }
         }/*
         //Filter using sort=field name

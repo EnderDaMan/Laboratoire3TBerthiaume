@@ -1,4 +1,4 @@
-import ContactModel from '../models/contact.js';
+import ContactModel from '../models/collectionFilter.js';
 import Repository from '../models/repository.js';
 import Controller from './Controller.js';
 

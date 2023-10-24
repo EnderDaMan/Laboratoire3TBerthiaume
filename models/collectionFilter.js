@@ -15,7 +15,7 @@ export default class CollectionFilter extends Model {
         //Set result with everything
         let result = this.objects;
         
-        /*
+        
         //Filter using field name=filter
         for(let paramName in this.params){
             if (paramName !== 'sort' && paramName !== 'limit' && paramName !== 'offset' && paramName !== 'fields') {
@@ -23,7 +23,7 @@ export default class CollectionFilter extends Model {
                     this.model.isMember(paramName) && object[paramName] == this.params[paramName]
                 );
             }
-        }
+        }/*
         //Filter using sort=field name
         if (this.params.sort && this.model.isMember(this.params.sort)) {
             result.sort();
